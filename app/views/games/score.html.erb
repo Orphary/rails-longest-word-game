@@ -1,0 +1,12 @@
+<h1>Score page</h1>
+<% if @valid_word && @english_word %>
+    <p>Congratulations! <strong><%= @answer.upcase %></strong> is a valid English word!</p>
+  <% elsif @valid_word && !@english_word %>
+    <p>Sorry but <strong><%= @answer.upcase %></strong> does not seem to be a valid English word...</p>
+  <% else %>
+    <p>Sorry but <strong><%= @answer.upcase %></strong> can't be built out of <em><%= @possible_letters %></em></p>
+<% end %>
+
+<p><%= @score %> points</p>
+
+<%= link_to "Play again ?", new_path %>
